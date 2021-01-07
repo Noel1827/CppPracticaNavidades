@@ -3,7 +3,9 @@
 using namespace std;
 char matrix[3][3] ={'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 char player = 'X';
+int n;
 void draw(){
+    system("cls");
     cout << "NOel Tic Tac Toe" << endl;
     for (int i = 0; i < 3; i++)
     {
@@ -21,37 +23,52 @@ void Input()
     cout << "Press the number of the field: ";
     cin >> a;
 
-  switch (a)
-  {
-  case 1:
-  matrix[0][0] = player;
-  break;
-    case 2:
-  matrix[0][1] = player;
-  break;
-    case 3:
-  matrix[0][2] = player;
-  break;
-    case 4:
-  matrix[1][0] = player;
-  break;
-    case 5:
-  matrix[1][1] = player;
-  break;
-    case 6:
-  matrix[1][2] = player;
-  break;
-    case 7:
-  matrix[2][0] = player;
-  break;
-    case 8:
-  matrix[2][1] = player;
-  break;
-    case 9:
-  matrix[2][2] = player;
-  break;
-  }
-  
+if(a == 1){
+    if(matrix[0][0] == '1'){
+        matrix[0][0] = player;
+    }else {cout << "Field occupied" <<endl;
+    Input();}}
+    if(a == 2){
+        if(matrix[0][1] == '2'){
+            matrix[0][1] = player;
+        }else {cout << "Field occupied"<<endl;
+    Input();}}
+    if(a==3){
+        if(matrix[0][2] == '3'){
+            matrix[0][2] = player;
+        }else{cout <<"Field occupied" << endl;
+        Input();}}
+          if(a==4){
+        if(matrix[1][0] == '4'){
+            matrix[1][0] = player;
+        }else{cout <<"Field occupied" << endl;
+        Input();}}
+          if(a==5){
+        if(matrix[1][1] == '5'){
+            matrix[1][1] = player;
+        }else{cout <<"Field occupied" << endl;
+        Input();}}
+          if(a==6){
+        if(matrix[1][2] == '6'){
+            matrix[1][2] = player;
+        }else{cout <<"Field occupied" << endl;
+        Input();}}
+          if(a==7){
+        if(matrix[2][0] == '7'){
+            matrix[2][0] = player;
+        }else{cout <<"Field occupied" << endl;
+        Input();}}
+          if(a==8){
+        if(matrix[2][1] == '8'){
+            matrix[2][1] = player;
+        }else{cout <<"Field occupied" << endl;
+        Input();}}
+          if(a==9){
+        if(matrix[2][2] == '9'){
+            matrix[2][2] = player;
+        }else{cout <<"Field occupied" << endl;
+        Input();}}
+
 }
 void TogglePlayer(){
     if(player == 'X'){
@@ -162,6 +179,7 @@ void reset(){
 }
 int main()
 {
+    n = 0;
     int i=0;
     draw();
     while(1){
@@ -176,7 +194,7 @@ int main()
             break;
         }
         TogglePlayer();
-        if(i == 9){
+        if(i == 9 ){
             i=0;
             if(Replay() == false)
             break;
